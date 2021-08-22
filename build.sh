@@ -1,4 +1,5 @@
 #!/bin/bash
+echo Starting script
 cd $HOME && mkdir twrp3
 git config --global user.name "The Beast"
 git config --global user.email "t.beast0403@gmail.com"
