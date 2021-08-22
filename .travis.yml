@@ -12,12 +12,11 @@ addons:
 git:
   depth: 1
 before_script:
-  - pip install git+https://github.com/naftulikay/travis-pls
   - cd $HOME
   - git clone https://github.com/TheBeast0403/twrptest.git $HOME/buildsh
   - cp $HOME/buildsh/build.sh $HOME/build.sh
   - chmod +x ./build.sh
-  - travis-pls -i 60 -m 2400 bash build.sh
+  - travis_wait 40 bash build.sh
 after_success:
   - echo Successfully made boot image
   - cd $HOME/twrp3/out/target/product/ && tree
