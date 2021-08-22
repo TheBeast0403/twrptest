@@ -15,7 +15,7 @@ before_script:
   - cd $HOME
   - git clone https://github.com/TheBeast0403/twrptest.git $HOME/buildsh
   - cp $HOME/buildsh/build.sh $HOME/build.sh
-  - exit
+  - exit 0
 script:
   - cd $HOME
   - chmod +X ./build.sh
