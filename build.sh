@@ -27,5 +27,7 @@ lunch omni_WSP_sprout-eng
 
 echo Building
 mka bootimage
+
+echo Copying files fro deployment
 mkdir $HOME/twrpboot $HOME/files
 cp -r $HOME/twrp3/out/target/product/WSP_sprout $HOME/tempfiles
