@@ -28,6 +28,10 @@ lunch omni_WSP_sprout-eng
 echo Building
 mka bootimage
 
+echo ninja test
+cd $HOME/twrp3/out/soong/
+ninja
+
 echo failsafe if yml breaks again
 cd $HOME/twrp3/out/target/product/WSP_sprout && tree
 mkdir ~/yml
