@@ -9,7 +9,6 @@ addons:
     packages:
       - zip
       - tree
-      - ninja-build
 git:
   depth: 1
 before_script:
@@ -18,7 +17,7 @@ before_script:
   - cp $HOME/buildsh/build.sh $HOME/build.sh
   - cd $HOME
   - chmod +X ./build.sh
-  - while sleep 1m; do echo "$SECONDS since travis started, pls stay awake ty"; done &
+  - while sleep 1m; do echo "$SECONDS seconds, don't die pls"; done &
   - bash build.sh
 script:
   - echo done
