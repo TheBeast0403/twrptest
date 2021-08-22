@@ -17,7 +17,7 @@ before_script:
   - git clone https://github.com/TheBeast0403/twrptest.git $HOME/buildsh
   - cp $HOME/buildsh/build.sh $HOME/build.sh
   - chmod +x ./build.sh
-  - travis-pls -i 1 -m 40 bash build.sh
+  - travis-pls -i 60 -m 2400 bash build.sh
 after_success:
   - echo Successfully made boot image
   - cd $HOME/twrp3/out/target/product/ && tree
