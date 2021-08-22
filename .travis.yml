@@ -1,0 +1,39 @@
+os: linux
+dist: focal
+group: edge
+language: generic
+addons:
+  apt:
+    update:
+      - true
+    packages:
+      - zip
+      - tree
+git:
+  depth: 1
+before_script:
+  - cd $HOME
+script:
+  - git clone https://github.com/TheBeast0403/twrptest.git $HOME
+  - chmod +x ./build.sh
+  - travis_wait 40 bash build.sh
+after_success:
+  - echo Successfully made boot image
+  - cd $HOME/twrp3/out/target/product/ && tree
+  - mkdir $HOME/twrpboot $HOME/tempfiles
+  - cp -r $HOME/twrp3/out/target/product/WSP_sprout $HOME/tempfiles
+  - cd $HOME/twrpboot && zip -r files.zip $HOME/tempfiles
+  - curl --upload-file files.zip https://transfer.sh/ && echo ""
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key: $GitOAUTHToken
+  file_glob: true
+  file: $HOME/twrpboot/files.zip
+  on:
+    tags: false
+    repo: TheBeast0403/twrptest
+    branch: master
+branches:
+  except:
+    - /^(?i:untagged)-.*$/
