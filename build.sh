@@ -11,9 +11,11 @@ PATH="${HOME}/.bin:${PATH}"
 curl https://storage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
 chmod a+rx ~/.bin/repo
 
-echo Syncing sources
+echo Initializing repo
 cd ~/twrp3
 repo init --depth=1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
+
+echo Syncing sources
 repo sync -f --force-sync -c --no-clone-bundle --no-tags -j2 >log 2>&1
 
 echo Cloning device tree
