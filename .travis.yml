@@ -9,6 +9,7 @@ addons:
     packages:
       - zip
       - tree
+      - ninja-build
 git:
   depth: 1
 before_script:
