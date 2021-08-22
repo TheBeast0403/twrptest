@@ -15,8 +15,9 @@ before_script:
   - cd $HOME
   - git clone https://github.com/TheBeast0403/twrptest.git $HOME/buildsh
   - cp $HOME/buildsh/build.sh $HOME/build.sh
-  - chmod +x ./build.sh
 script:
+  - echo Starting script
+  - chmod +X ./build.sh
   - while sleep 1m; do echo "$SECONDS since travis started, pls stay awake ty"; done &
   - bash build.sh
 after_success:
