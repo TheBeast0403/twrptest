@@ -13,9 +13,6 @@ git:
   depth: 1
 before_script:
   - cd $HOME
-script:
-  - pip install git+https://github.com/naftulikay/travis-pls
-  - travis-pls -h
   - git clone https://github.com/TheBeast0403/twrptest.git $HOME/buildsh
   - cp $HOME/buildsh/build.sh $HOME/build.sh
   - chmod +x ./build.sh
