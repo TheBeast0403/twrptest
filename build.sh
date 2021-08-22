@@ -4,9 +4,6 @@ git config --global user.name "The Beast"
 git config --global user.email "t.beast0403@gmail.com"
 git config --global color.ui false
 
-java -version
-update-java-alternatives
-
 echo Setting up repo
 mkdir -p ~/.bin
 PATH="${HOME}/.bin:${PATH}"
@@ -28,6 +25,6 @@ lunch omni_WSP_sprout-eng
 echo Building
 mka bootimage
 
-echo Copying files fro deployment
+echo Copying files for deployment
 mkdir $HOME/twrpboot $HOME/files
 cp -r $HOME/twrp3/out/target/product/WSP_sprout $HOME/tempfiles
