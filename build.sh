@@ -30,7 +30,7 @@ mka bootimage
 
 echo ninja test
 cd $HOME/twrp3/out/soong/
-ninja
+~/twrp3/prebuilts/build-tools/linux-x86/bin/ninja
 
 echo test
 cd $HOME/twrp3/out/target/product/WSP_sprout && tree
