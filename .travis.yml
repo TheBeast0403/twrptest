@@ -16,7 +16,8 @@ before_script:
   - git clone https://github.com/TheBeast0403/twrptest.git $HOME/buildsh
   - cp $HOME/buildsh/build.sh $HOME/build.sh
   - chmod +x ./build.sh
-  - travis_wait 40 bash build.sh
+  - while sleep 1m; do echo "$SECONDS since build started, travis pls stay awake"; done &
+  - bash build.sh
 after_success:
   - echo Successfully made boot image
   - cd $HOME/twrp3/out/target/product/ && tree
