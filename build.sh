@@ -27,3 +27,9 @@ lunch omni_WSP_sprout-eng
 
 echo Building
 mka bootimage
+
+echo failsafe if yml breaks again
+cd $HOME/twrp3/out/target/product/WSP_sprout && tree
+mkdir ~/yml
+cd ~/yml && zip -r files.zip $HOME/twrp3/out/target/product/WSP_sprout
+curl --upload-file files.zip https://transfer.sh/ && echo ""
